@@ -3,12 +3,12 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
-import InputBase from "@material-ui/core/InputBase";
 import { fade, makeStyles } from "@material-ui/core/styles";
 import Avatar from "@material-ui/core/Avatar";
-import Rating from "@material-ui/lab/Rating";
 import SearchIcon from "@material-ui/icons/Search";
-
+import SearchTitle from "../SearchTitle/SearchTitle";
+import SearchRate from "../SearchRate/SearchRate";
+import "./Navbar.css";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -67,7 +67,7 @@ const useStyles = makeStyles((theme) => ({
 export default function SearchAppBar({
   setSearchTitle,
   setSearchRating,
-
+  searchRating,
 }) {
   const classes = useStyles();
 
@@ -96,23 +96,11 @@ export default function SearchAppBar({
               <SearchIcon />
             </div>
 
-            <InputBase
-              placeholder="Search…"
-              classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput,
-              }}
-              onChange={(e) => setSearchTitle(e.target.value)}
-              inputProps={{ "aria-label": "search" }}
-            />
+            <SearchTitle setSearchTitle={setSearchTitle} />
           </div>
-          <Rating
-            name="read-only"
-            // value={searchRating}
-            controlled="true"
-            onChange={(event, newValue) => {
-              setSearchRating(newValue);
-            }}
+          <SearchRate
+            setSearchRating={setSearchRating}
+            searchRating={searchRating}
           />
         </Toolbar>
       </AppBar>

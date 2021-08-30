@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
 import AddCircleOutlineIcon from "@material-ui/icons/AddCircleOutline";
-
+import "./AddMovie.css";
 function getModalStyle() {
   const top = 50;
   const left = 50;
@@ -82,7 +82,8 @@ export default function AddMovie({ handleMovie }) {
       <AddCircleOutlineIcon
         type="button"
         onClick={handleOpen}
-        style={{ fontSize: 80, color: "#75cfb8", position: "fixed" }}
+        style={{ fontSize: 80, color: "black", position: "fixed" }}
+        className="addBtn"
       />
 
       <Modal

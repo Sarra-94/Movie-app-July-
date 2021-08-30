@@ -10,7 +10,6 @@ const MovieList = ({ movies, searchTitle, searchRating }) => {
   };
   return (
     <div>
-      <h2 style={{ textAlign: "center" }}>MovieList</h2>
       <div className="moviesList">
         {movies
           .filter(
